@@ -18,7 +18,7 @@ RUN hg clone http://hg.openjdk.java.net/jdk9/jdk9 openjdk9 && cd openjdk9 && sh 
 RUN wget --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
 RUN tar zxvf jdk-8u131-linux-x64.tar.gz -C /opt
 
-RUN cd openjdk9 && bash ./configure --with-cacerts-file=/etc/ssl/certs/java/cacerts --with-boot-jdk=/opt/jdk1.8.0_131
+RUN cd openjdk9 && bash ./configure --with-cacerts-file=/etc/ssl/certs/java/cacerts --with-boot-jdk=/opt/jdk1.8.0_131 --disable-warnings-as-errors
 
 RUN cd openjdk9 && make clean images
 
