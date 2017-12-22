@@ -6,6 +6,7 @@ RUN apt-get update && \
 	zip \
         unzip \
 	file \
+	cpio \
 	libelf-dev \
 	libx11-dev \
 	libxext-dev libxrender-dev libxtst-dev libasound2-dev libcups2-dev libfreetype6-dev ca-certificates-java && \
