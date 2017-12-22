@@ -18,7 +18,7 @@ RUN wget --no-check-certificate --header "Cookie: oraclelicense=accept-securebac
     tar zxvf jdk-8u131-linux-x64.tar.gz -C /opt && \
     hg clone http://hg.openjdk.java.net/jdk8/jdk8 openjdk8 && cd openjdk8 && sh ./get_source.sh && \
     bash ./configure --with-cacerts-file=/etc/ssl/certs/java/cacerts --with-boot-jdk=/opt/jdk1.8.0_131 && \
-    make clean images && \
+    DISABLE_HOTSPOT_OS_VERSION_CHECK=ok make clean images && \
     cp -a build/linux-x86_64-normal-server-release/images/jdk /opt/openjdk8 && \
     find /opt/openjdk8 -type f -exec chmod a+r {} + && find /opt/openjdk8 -type d -exec chmod a+rx {} + && \
     rm -rf /usr/src/* /opt/jdk1.8.0_131
